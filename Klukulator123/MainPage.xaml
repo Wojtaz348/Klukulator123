@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Klukulator123.MainPage">
+
+    <StackLayout>
+        <Label Text="Kalkulator" FontSize="30" HorizontalOptions="Center" Margin="0,20,0,20" />
+        <Entry x:Name="Display" Text="{Binding DisplayText}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" FontSize="24" Margin="10"/>
+        <Grid Margin="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="400"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Przyciski do cyfr i operacji -->
+            <Button Text="7" Command="{Binding DigitCommand}" CommandParameter="7" Grid.Row="1" Grid.Column="0" BackgroundColor="#29Af29"/>
+            <Button Text="8" Command="{Binding DigitCommand}" CommandParameter="8" Grid.Row="1" Grid.Column="1" BackgroundColor="#29Af29"/>
+            <Button Text="9" Command="{Binding DigitCommand}" CommandParameter="9" Grid.Row="1" Grid.Column="2" BackgroundColor="#29Af29"/>
+            <Button Text="/" Command="{Binding OperationCommand}" CommandParameter="/" Grid.Row="1" Grid.Column="3" BackgroundColor="#808080"/>
+
+            <Button Text="4" Command="{Binding DigitCommand}" CommandParameter="4" Grid.Row="2" Grid.Column="0" BackgroundColor="#29Af29"/>
+            <Button Text="5" Command="{Binding DigitCommand}" CommandParameter="5" Grid.Row="2" Grid.Column="1" BackgroundColor="#29Af29"/>
+            <Button Text="6" Command="{Binding DigitCommand}" CommandParameter="6" Grid.Row="2" Grid.Column="2" BackgroundColor="#29Af29"/>
+          
+
+            <Button Text="1" Command="{Binding DigitCommand}" CommandParameter="1" Grid.Row="3" Grid.Column="0" BackgroundColor="#29Af29"/>
+            <Button Text="2" Command="{Binding DigitCommand}" CommandParameter="2" Grid.Row="3" Grid.Column="1" BackgroundColor="#29Af29"/>
+            <Button Text="3" Command="{Binding DigitCommand}" CommandParameter="3" Grid.Row="3" Grid.Column="2" BackgroundColor="#29Af29"/>
+            <Button Text="0" Command="{Binding DigitCommand}" CommandParameter="0" Grid.Row="4" Grid.Column="0" BackgroundColor="#29Af29"/>
+            <Button Text="-" Command="{Binding OperationCommand}" CommandParameter="-" Grid.Row="3" Grid.Column="3" BackgroundColor="#808080"/>
+            <Button Text="0" Command="{Binding DigitCommand}" CommandParameter="0" Grid.Row="4" Grid.Column="0" BackgroundColor="#29Af29"/>
+            <Button Text="." Command="{Binding DigitCommand}" CommandParameter="." Grid.Row="4" Grid.Column="1" BackgroundColor="#808080"/>
+            <Button Text="=" Command="{Binding EqualsCommand}" Grid.Row="4" Grid.Column="2" BackgroundColor="#FF0D37E3"/>
+            <Button Text="+" Command="{Binding OperationCommand}" CommandParameter="+" Grid.Row="4" Grid.Column="3" BackgroundColor="#808080"/>
+            <Button Text="*" Command="{Binding OperationCommand}" CommandParameter="*" Grid.Row="2" Grid.Column="3" BackgroundColor="#808080"/>
+        </Grid>
+
+        <!-- Przycisk zasilania -->
+        <Button Text="C" Command="{Binding PowerCommand}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="#FFE64848" WidthRequest="1800" />
+
+        <!-- historia  -->
+        <Button Text="Historia" Command="{Binding ShowHistoryCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" FontSize="15" Margin="5"/>
+    </StackLayout>
+
+</ContentPage>
